@@ -14,7 +14,6 @@
 #define __APPHEADERFILE_H19CTY__
 
 #include "AppConfig.h"
-
 #include "modules/juce_core/juce_core.h"
 #include "modules/juce_data_structures/juce_data_structures.h"
 #include "modules/juce_events/juce_events.h"
@@ -27,11 +26,13 @@
  using namespace juce;
 #endif
 
+#if ! JUCE_DONT_DECLARE_PROJECTINFO
 namespace ProjectInfo
 {
     const char* const  projectName    = "Twindy";
     const char* const  versionString  = "1.0.2";
     const int          versionNumber  = 0x10002;
 }
+#endif
 
 #endif   // __APPHEADERFILE_H19CTY__

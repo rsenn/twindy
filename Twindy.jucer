@@ -1,32 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="H19Cty" name="Twindy" projectType="guiapp" version="1.0.2"
-              bundleIdentifier="com.yourcompany.Twindy" jucerVersion="3.0.0">
+              bundleIdentifier="com.yourcompany.Twindy" jucerVersion="4.1.0"
+              includeBinaryInAppConfig="1">
   <MAINGROUP id="VVGdHG" name="Twindy">
     <GROUP id="{9C07C214-7BCA-164B-102C-62F974171B77}" name="Source">
+      <GROUP id="{CC8D3DBB-4D08-CEC4-49E6-1B2724330D23}" name="ExtraComponents">
+        <FILE id="adxTDI" name="Clock.cpp" compile="1" resource="0" file="Source/ExtraComponents/Clock.cpp"/>
+        <FILE id="CkdcF4" name="Clock.h" compile="0" resource="0" file="Source/ExtraComponents/Clock.h"/>
+        <FILE id="ZnAOZn" name="DrawableTextButton.cpp" compile="1" resource="0"
+              file="Source/ExtraComponents/DrawableTextButton.cpp"/>
+        <FILE id="Q3fy7X" name="DrawableTextButton.h" compile="0" resource="0"
+              file="Source/ExtraComponents/DrawableTextButton.h"/>
+        <FILE id="MqvhgV" name="TracktionScheme.cpp" compile="1" resource="0"
+              file="Source/ExtraComponents/TracktionScheme.cpp"/>
+        <FILE id="wGnVNo" name="TracktionScheme.h" compile="0" resource="0"
+              file="Source/ExtraComponents/TracktionScheme.h"/>
+        <FILE id="VAShcb" name="TwindyTabbedComponent.cpp" compile="1" resource="0"
+              file="Source/ExtraComponents/TwindyTabbedComponent.cpp"/>
+        <FILE id="aBhGfB" name="TwindyToggleButton.cpp" compile="1" resource="0"
+              file="Source/ExtraComponents/TwindyToggleButton.cpp"/>
+        <FILE id="OWk1pe" name="TwindyToggleButton.h" compile="0" resource="0"
+              file="Source/ExtraComponents/TwindyToggleButton.h"/>
+      </GROUP>
+      <FILE id="dNpYl5" name="DefaultTracktionScheme.h" compile="0" resource="0"
+            file="Source/DefaultTracktionScheme.h"/>
+      <FILE id="Oy2B0o" name="TwindyApp.cpp" compile="1" resource="0" file="Source/TwindyApp.cpp"/>
       <FILE id="ke1Ugl" name="TwindyApp.h" compile="0" resource="0" file="Source/TwindyApp.h"/>
-      <FILE id="kScXbg" name="MainWindow.cpp" compile="1" resource="0" file="Source/MainWindow.cpp"/>
-      <FILE id="uDmJiP" name="MainWindow.h" compile="0" resource="0" file="Source/MainWindow.h"/>
-      <FILE id="OiwX7R" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="wOv8oL" name="TwindyTabbedComponent.h" compile="0" resource="0"
+            file="Source/ExtraComponents/TwindyTabbedComponent.h"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_events" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="1"/>
-    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="1"/>
-    <MODULE id="juce_gui_audio" showAllCode="1" useLocalCopy="1"/>
   </MODULES>
   <EXPORTFORMATS>
-    <LINUX_MAKE targetFolder="Builds/Linux" juceFolder="../modules">
+    <LINUX_MAKE targetFolder="Builds/Linux" extraDefs="JUCE_NEW=1 NO_T=1" packages="freetype2">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"
                        targetName="Twindy"/>
         <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="2"
                        targetName="Twindy"/>
       </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_gui_basics" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_events" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_core" path="../../juce/JUCE-2.0.41/modules"/>
+      </MODULEPATHS>
     </LINUX_MAKE>
+    <CODEBLOCKS_LINUX targetFolder="Builds/CodeBlocksLinux" extraDefs="JUCE_NEW=1 NO_T=1">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_gui_basics" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_events" path="../../juce/JUCE-2.0.41/modules"/>
+        <MODULEPATH id="juce_core" path="../../juce/JUCE-2.0.41/modules"/>
+      </MODULEPATHS>
+    </CODEBLOCKS_LINUX>
   </EXPORTFORMATS>
   <JUCEOPTIONS/>
+  <LIVE_SETTINGS>
+    <LINUX buildEnabled="1"/>
+  </LIVE_SETTINGS>
 </JUCERPROJECT>

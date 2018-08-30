@@ -23,7 +23,7 @@
 //------------------------------------------------------------------------------
 Clock::Clock()
     : Component(),
-      text(T("...")),
+      text(JUCE_T("...")),
       colour(Colours::white),
       displayingDate(false),
       includeSeconds(true),
@@ -31,7 +31,7 @@ Clock::Clock()
       monthDisplayedFirst(false),
       dateSeparator("/")
 {
-    //font.setTypefaceName(T("Bitstream Vera Sans"));
+    //font.setTypefaceName(JUCE_T("Bitstream Vera Sans"));
     font.setBold(true);
     font.setHeight(16.0f);
 
@@ -55,7 +55,7 @@ void Clock::timerCallback()
     }
     else
     {
-        text = T("");
+        text = JUCE_T("");
         if(! monthDisplayedFirst)
         {
             text << Time::getCurrentTime().getDayOfMonth();

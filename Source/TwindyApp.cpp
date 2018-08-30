@@ -20,11 +20,12 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "TwindyApp.h"
-#include "TwindyRootWindow.h"
+//#include "TwindyRootWindow.h"
 #include "TwindyHelperStuff.h"
 #include "AboutPage.h"
 
 #include <iostream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -37,7 +38,7 @@ void TwindyApp::initialise(const String& commandLine)
     Rectangle recadendrum = Desktop::getInstance().getMainMonitorArea();
 #endif
 
-    if (commandLine.contains(T("--help")))
+    if (commandLine.contains(JUCE_T("--help")))
     {
         cout << "Twindy Window Manager" << endl;
         cout << "Version: " << ProjectInfo::versionString << endl;
@@ -47,7 +48,7 @@ void TwindyApp::initialise(const String& commandLine)
         cout << endl;
         JUCEApplication::quit();
     }
-    else if(commandLine.contains(T("--version")))
+    else if(commandLine.contains(JUCE_T("--version")))
     {
         cout << "Twindy Window Manager" << endl;
         cout << "Version: " << ProjectInfo::versionString << endl;

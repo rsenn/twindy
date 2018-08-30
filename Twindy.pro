@@ -6,7 +6,7 @@ CONFIG   += link_pkgconfig
 PKGCONFIG = freetype2
 
 DEFINES  = LINUX PHIL_LIGHT JUCE_NEW
-DEFINES += DEBUG TWINDY_DEBUG
+DEFINES += DEBUG TWINDY_DEBUG JUCE_NAMESPACE=juce T=JUCE_T
 
 TARGET   = twindy
 TEMPLATE = app
@@ -33,13 +33,14 @@ HEADERS  = \
     Source/ExtraComponents/TracktionScheme.h \
     Source/ExtraComponents/TwindyTabbedComponent.h \
     Source/ExtraComponents/TwindyToggleButton.h \
+    Source/PreferencesPages/AboutPage.h \
     Source/PreferencesPages/AboutPage.h
 
 INCLUDEPATH = \
-    JuceLibraryCode \
-    Source \
-    Source/ExtraComponents \
-    Source/PreferencesPages
+    $$PWD/JuceLibraryCode \
+    $$PWD/Source \
+    $$PWD/Source/ExtraComponents \
+    $$PWD/Source/PreferencesPages
 
 QMAKE_CXXFLAGS += -std=c++0x
 #QMAKE_CXXFLAGS += -isystem ./JuceLibraryCode/modules/

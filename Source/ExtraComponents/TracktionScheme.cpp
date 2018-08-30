@@ -19,7 +19,11 @@
 // ----------------------------------------------------------------------------
 
 #include "TracktionScheme.h"
-#include "DefaultTracktionScheme.h"
+#include "../DefaultTracktionScheme.h"
+
+#ifdef NO_T
+#define T(str) str
+#endif
 
 //------------------------------------------------------------------------------
 TracktionScheme::TracktionScheme(const String& schemePath)
